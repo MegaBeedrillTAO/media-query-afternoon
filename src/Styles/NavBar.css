@@ -1,0 +1,54 @@
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(26, 23, 23);
+    width: 100vw;
+    height: 10vh;
+    color: white;
+}
+nav> div > h1{
+    color: #fed136;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 40vw;
+    list-style: none;
+}
+
+.desktop:hover{
+    color: #fed136;
+    cursor: pointer;
+}
+.menu-button{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fed136;
+    border-radius: 10%;
+}
+img{
+    width: 20px;
+    height: 20px;
+    filter: invert(1);
+}
+.mobile{
+    display: none;
+}
+
+@media(max-width:996px){
+    .mobile{
+        display: block;
+    }
+    .desktop{
+        display: none;
+    }
+}
