@@ -32,16 +32,22 @@ class NavBar extends React.Component{
                             <li className='desktop'>Team</li>
                             <li className='desktop'>Contact</li>
                             <li className='mobile'>
-                                <div className='menu-button'>
+                                <div className='menu-button' onClick={this.toggle}>
                                     <p>Menu</p>
-                                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png' alt='hamburger button'/>
+                                    <img 
+                                    src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png' 
+                                    alt='hamburger button'/>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
-                <section>
-
+                <section className={`${this.state.menuClass}`}>
+                    <h2>Services</h2>
+                    <h2>Portfolio</h2>
+                    <h2>About</h2>
+                    <h2>Team</h2>
+                    <h2>Contact</h2>
                 </section>
             </div>    
         )

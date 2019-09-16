@@ -4,9 +4,11 @@ nav{
     justify-content: space-around;
     align-items: center;
     background-color: rgb(26, 23, 23);
+    position: relative;
     width: 100vw;
     height: 10vh;
     color: white;
+    z-index: 1;
 }
 nav> div > h1{
     color: #fed136;
@@ -19,8 +21,11 @@ ul{
     width: 40vw;
     list-style: none;
 }
-
-.desktop:hover{
+h2{
+    color: white;
+    margin-left: 8vw;
+}
+.desktop:hover, h2:hover{
     color: #fed136;
     cursor: pointer;
 }
@@ -40,8 +45,39 @@ img{
     height: 20px;
     filter: invert(1);
 }
-.mobile{
+.mobile, .default{
     display: none;
+}
+.default, .menu-open, .menu-closed{
+    width: 100vw;
+    height: 50vh;
+    background-color: rgb(26, 23, 23);
+    position: fixed;
+    top: 0px;
+    transform: translateY(-610px);
+    z-index: 0;
+}
+.menu-open{
+    display: block;
+    animation: open .5s linear forwards;
+}
+.menu-closed{
+    display: block;
+    animation: close .5s linear forwards;
+}
+
+@keyframes open {
+    to{
+        transform: translateY(70px);
+    }
+}
+@keyframes close{
+    from{
+        transform: translateY(70px);
+    }
+    to{
+        transform: translateY(-610px);
+    }
 }
 
 @media(max-width:996px){
@@ -49,6 +85,11 @@ img{
         display: block;
     }
     .desktop{
+        display: none;
+    }
+}
+@media(min-width: 997px){
+    .default, .menu-closed, .menu-open{
         display: none;
     }
 }
